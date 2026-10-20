@@ -1,0 +1,39 @@
+.reveal,.js-motion .reveal{opacity:1;transform:none}
+.motion-reveal,.js-motion .motion-reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1);transition-delay:var(--delay,0ms)}
+.motion-reveal.on,.js-motion .motion-reveal.on{opacity:1;transform:none}
+.ambient{background:linear-gradient(125deg,#111929,#172136 55%,#111a2b)}
+.ambient:before,.ambient:after{width:85vw;height:85vh;opacity:.45;background:radial-gradient(ellipse,#5277a333,transparent 65%);animation:quietDrift 28s ease-in-out infinite alternate}
+.ambient:after{background:radial-gradient(ellipse,#b6986420,transparent 67%);animation-duration:36s;animation-direction:alternate-reverse}
+@keyframes quietDrift{from{transform:translate3d(0,0,0)}to{transform:translate3d(9vw,7vh,0)}}
+.hero h1,.hero .eyebrow,.hero .lead,.hero .actions,.hero .portrait{animation:welcome .9s cubic-bezier(.2,.7,.2,1) both;clip-path:none}
+.hero .lead{animation-delay:.1s}.hero .actions{animation-delay:.2s}.hero .portrait{animation-delay:.12s}
+@keyframes welcome{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.seal,.calculator:after,.quote:before,.quote-line,.ticker div{animation:none}
+.quote:before{opacity:.35}.quote-line{display:none}
+.service,.card,.review-card{transition:border-color .25s,box-shadow .25s,opacity .65s,transform .65s}
+.service:hover,.card:hover,.review-card:hover{transform:none;border-color:#c5a16a88;box-shadow:0 12px 30px #0002}
+.service:before,.card:before,.btn:after,.nav-cta:after{display:none}
+.btn,.nav-cta{transition:background .22s,border-color .22s,box-shadow .22s,transform .22s}
+.btn:hover,.nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px #0003}
+.btn:active{transform:translateY(0)}.bot-btn:hover{transform:none}
+.glass-cursor{width:22px;height:22px;margin:-11px 0 0 -11px;border:1px solid #d4b47d88;background:transparent;backdrop-filter:none;box-shadow:none;transition:opacity .15s,width .18s,height .18s,margin .18s}
+.glass-cursor.over{width:34px;height:34px;margin:-17px 0 0 -17px;background:#c5a16a10}
+.referral-panel{position:relative;isolation:isolate;overflow:hidden;background:#172135;gap:clamp(24px,4vw,60px)}
+.referral-panel:before{content:'';position:absolute;inset:0;pointer-events:none;border:1px solid #d4b47d99;clip-path:inset(0 100% 0 0);transition:clip-path 1.15s ease .15s;z-index:-1}
+.referral-panel.on:before{clip-path:inset(0)}
+.referral-panel:after{content:'';position:absolute;top:0;left:-20%;height:1px;width:20%;background:linear-gradient(90deg,transparent,#f0d8a6,transparent);pointer-events:none;opacity:.8;animation:referralEdge 9s ease-in-out infinite;animation-play-state:paused}
+.referral-panel.on:after{animation-play-state:running}
+@keyframes referralEdge{0%,15%{transform:translateX(0);opacity:0}30%{opacity:.8}80%,100%{transform:translateX(600%);opacity:0}}
+.referral-panel .referral-amount{font-size:clamp(48px,5vw,72px);letter-spacing:-.035em}
+.referral-panel.on .referral-amount{animation:referralAmount .85s cubic-bezier(.2,.7,.2,1) both .12s}
+@keyframes referralAmount{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+.referral-panel.on li{animation:welcome .65s both;animation-delay:var(--item-delay,180ms)}
+.referral-panel .btn{display:inline-flex;align-items:center;justify-content:center;max-width:100%;line-height:1.5;white-space:normal}
+.referral-panel .btn:hover{box-shadow:0 8px 24px #c5a16a22}
+.motion-toggle{border-radius:20px;background:#131c2ee8;color:#d0c6b7;border-color:#c5a16a40;padding:8px 12px;font-size:11px}
+body.motion-paused *,body.motion-paused *:before,body.motion-paused *:after{animation:none!important;transition:none!important}
+body.motion-paused .motion-reveal,body.motion-paused .reveal{opacity:1!important;transform:none!important}
+body.motion-paused .referral-panel:before{clip-path:inset(0)}
+body.motion-idle *,body.motion-idle *:before,body.motion-idle *:after{animation-play-state:paused!important}
+@media(max-width:650px){.referral-panel{padding:26px 22px;gap:16px}.referral-panel .referral-amount{margin:20px 0}.referral-panel ol{margin-top:0}.glass-cursor{display:none}.motion-toggle{bottom:10px;left:10px}}
+@media(prefers-reduced-motion:reduce){.motion-reveal,.js-motion .motion-reveal{opacity:1;transform:none}.referral-panel:before{clip-path:inset(0)}*,*:before,*:after{animation:none!important;transition:none!important}}

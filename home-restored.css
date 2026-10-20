@@ -1,0 +1,4 @@
+.navlinks{gap:20px;font-size:12px;letter-spacing:.08em}.nav .brand{flex-shrink:0}.nav .burger{flex-shrink:0}
+.js-motion .reveal.on{opacity:1;transform:none}.bot .quick{margin-top:12px}.bot .bubble a{color:#d4b47d;text-decoration:underline}
+@media(max-width:1100px){.navlinks{gap:12px;font-size:11px;letter-spacing:.04em}.nav{gap:16px;padding-inline:20px}}
+@media(max-width:900px){.nav.open{height:92px;align-items:center;padding-bottom:0}.nav.open .navlinks{font-size:14px;gap:22px}.navlinks{display:none}}
